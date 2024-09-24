@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const mysql = require('mysql')
 const util = require('util')
+require('dotenv').config()
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
