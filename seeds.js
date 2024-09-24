@@ -32,7 +32,7 @@ async function main() {
     const createMoviesTable = `
       CREATE TABLE IF NOT EXISTS movies (
         title VARCHAR(250) NOT NULL PRIMARY KEY,
-        release VARCHAR(250),
+        release_year VARCHAR(250),
         score INT,
         reviewer VARCHAR(250),
         publication VARCHAR(250),
@@ -101,7 +101,7 @@ async function main() {
     await pool.query(reviewersQuery, [reviewersValues]);
 
     const moviesQuery =
-      "INSERT INTO movies (title, release, score, reviewer, publication) VALUES ?";
+      "INSERT INTO movies (title, release_year, score, reviewer, publication) VALUES ?";
     const moviesValues = [
       ["Suicide Squad", "2016", 8, "Robert Smith", "The Daily Reviewer"],
       [
